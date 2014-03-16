@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="com.spring.mustache" annotation-config="true" />
     <context:annotation-config />
@@ -28,12 +28,11 @@
         </property>
         <property name="viewResolvers">
             <list>
-                <bean id="viewResolver" class="org.springframework.web.servlet.view.mustache.MustacheViewResolver">
+                <bean id="viewResolver" class="com.github.jknack.handlebars.springmvc.HandlebarsViewResolver">
                     <property name="cache" value="false"/>
                     <property name="contentType" value="text/html;charset=UTF-8"/>
                     <property name="prefix" value="/WEB-INF/view/"/>
                     <property name="suffix" value=".html"/>
-                    <property name="templateLoader" ref="templateLoader"/>
                 </bean>
             </list>
         </property>
@@ -44,6 +43,9 @@
         </property>
     </bean>
 
-    <bean id="templateLoader" class="org.springframework.web.servlet.view.mustache.MustacheTemplateLoader"/>
+    <bean id="templateLoader" class="com.github.jknack.handlebars.io.FileTemplateLoader">
+        <constructor-arg name="basedir" value="/WEB-INF/view/"/>
+        <constructor-arg name="suffix" value=".html"/>
+    </bean>
 
 </beans>

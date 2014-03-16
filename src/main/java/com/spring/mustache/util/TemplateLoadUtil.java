@@ -1,19 +1,28 @@
 package com.spring.mustache.util;
 
 
+import com.github.jknack.handlebars.io.TemplateLoader;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.view.mustache.MustacheTemplateLoader;
 
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.io.StringWriter;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class TemplateLoadUtil {
     @Autowired
-    private MustacheTemplateLoader templateLoader;
+    private TemplateLoader templateLoader;
+
+    @Autowired
+    private ResourceLoader resourceLoader;
 
     private class Template {
         private String id;
@@ -44,7 +53,7 @@ public class TemplateLoadUtil {
     private Template getTemplate(String viewName) {
         try {
             StringWriter writer = new StringWriter();
-            IOUtils.copy(templateLoader.getTemplate(viewName), writer);
+            IOUtils.copy(getReader(viewName), writer);
             return new Template(viewName.replace("/", "_"), writer.toString());
         } catch (Exception e) {
             return null;
@@ -57,5 +66,19 @@ public class TemplateLoadUtil {
             templates.add(getTemplate(viewName));
         }
         return templates;
+    }
+
+    private Reader getReader(String filename) throws Exception {
+        if (!filename.startsWith(templateLoader.getPrefix())) {
+            filename = templateLoader.getPrefix() + filename;
+        }
+        if (!filename.endsWith(templateLoader.getSuffix())) {
+            filename = filename + templateLoader.getSuffix();
+        }
+        Resource resource = resourceLoader.getResource(filename);
+        if (resource.exists()) {
+            return new InputStreamReader(resource.getInputStream(), Charset.forName("UTF-8"));
+        }
+        throw new FileNotFoundException(filename);
     }
 }

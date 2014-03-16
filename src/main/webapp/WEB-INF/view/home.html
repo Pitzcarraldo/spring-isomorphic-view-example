@@ -4,20 +4,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<h1>{{message}}</h1>
-{{ > partial/items }}
+<h1>{{hello}}</h1>
+{{>partial/items}}
 <button id="button">more</button>
-{{ > partial/tmpls }}
+{{>partial/tmpls}}
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script>
+<script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v1.3.0.js"></script>
 <script>
     var index = 4, inc = 3;
     $('#button').click(function () {
         var from = index, to = index + inc - 1;
         index = index + inc;
         $.get('/items/' + from + '/' + to + '.json', function (data) {
-            $('ul:last').after(Hogan.compile($('#tmpl_partial_items').html()).render(data));
+            $('ul:last').after(Handlebars.compile($('#tmpl_partial_items').html())(data));
         });
     });
 </script>
