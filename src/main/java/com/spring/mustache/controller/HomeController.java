@@ -1,5 +1,6 @@
 package com.spring.mustache.controller;
 
+import com.github.mustachejava.util.DecoratedCollection;
 import com.spring.mustache.model.Item;
 import com.spring.mustache.util.TemplateLoadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,17 +30,17 @@ public class HomeController {
 
     @RequestMapping(value = "/items/{from}/{to}", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String, List> items(@PathVariable Integer from, @PathVariable Integer to) {
-        Map<String, List> map = new HashMap<String, List>();
+    public Map<String, Collection> items(@PathVariable Integer from, @PathVariable Integer to) {
+        Map<String, Collection> map = new HashMap<String, Collection>();
         map.put("items", getItems(from, to));
         return map;
     }
 
-    private List<Item> getItems(Integer from, Integer to) {
+    private Collection<Item> getItems(Integer from, Integer to) {
         List<Item> items = new ArrayList<Item>();
         for (int i = from; i <= to; i++) {
             items.add(new Item("item" + i, "content" + i));
         }
-        return items;
+        return new DecoratedCollection(items);
     }
 }
