@@ -4,7 +4,9 @@ package com.spring.mustache.util;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.view.AbstractTemplateViewResolver;
 import org.springframework.web.servlet.view.mustache.MustacheTemplateLoader;
+import org.springframework.web.servlet.view.mustache.MustacheView;
 
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -12,6 +14,8 @@ import java.util.List;
 
 @Component
 public class TemplateLoadUtil {
+    private static final String SUFFIX = ".html";
+
     @Autowired
     private MustacheTemplateLoader templateLoader;
 
@@ -44,7 +48,7 @@ public class TemplateLoadUtil {
     private Template getTemplate(String viewName) {
         try {
             StringWriter writer = new StringWriter();
-            IOUtils.copy(templateLoader.getTemplate(viewName), writer);
+            IOUtils.copy(templateLoader.getReader(viewName + SUFFIX), writer);
             return new Template(viewName.replace("/", "_"), writer.toString());
         } catch (Exception e) {
             return null;

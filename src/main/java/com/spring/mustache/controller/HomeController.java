@@ -1,7 +1,7 @@
 package com.spring.mustache.controller;
 
+import com.github.mustachejava.util.DecoratedCollection;
 import com.spring.mustache.model.Item;
-import com.spring.mustache.util.DecoratedCollection;
 import com.spring.mustache.util.TemplateLoadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

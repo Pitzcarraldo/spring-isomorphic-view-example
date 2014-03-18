@@ -13,12 +13,24 @@
         <project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>github.pitzcarraldo</id>
+            <url>https://github.com/Pitzcarraldo/maven/raw/master/snapshots</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
-            <groupId>com.github.sps.mustache</groupId>
-            <artifactId>mustache-spring-view</artifactId>
-            <version>1.2</version>
+            <groupId>com.github.pitzcarraldo</groupId>
+            <artifactId>mustache.java-spring-webmvc</artifactId>
+            <version>0.9.4-SNAPSHOT</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.github.sps.mustache</groupId>-->
+            <!--<artifactId>mustache-spring-view</artifactId>-->
+            <!--<version>1.2</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.springframework</groupId>
