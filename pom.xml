@@ -22,8 +22,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.pitzcarraldo</groupId>
-            <artifactId>mustache.java-spring-webmvc</artifactId>
+            <groupId>com.github.pitzcarraldo.mustache</groupId>
+            <artifactId>spring-view</artifactId>
             <version>0.9.4-SNAPSHOT</version>
         </dependency>
         <!--<dependency>-->
