@@ -15,8 +15,8 @@
 
     <repositories>
         <repository>
-            <id>github.pitzcarraldo</id>
-            <url>https://github.com/Pitzcarraldo/maven/raw/master/snapshots</url>
+            <id>Sonatype Snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </repository>
     </repositories>
 
@@ -26,11 +26,6 @@
             <artifactId>spring-view</artifactId>
             <version>0.9.4-SNAPSHOT</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.github.sps.mustache</groupId>-->
-            <!--<artifactId>mustache-spring-view</artifactId>-->
-            <!--<version>1.2</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>org.springframework</groupId>
