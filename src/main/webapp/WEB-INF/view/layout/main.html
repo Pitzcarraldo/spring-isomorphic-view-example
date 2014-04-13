@@ -14,7 +14,7 @@
         var from = index, to = index + inc - 1;
         index = index + inc;
         $.get('/items/' + from + '/' + to + '.json', function (data) {
-            $('ul:last').after(Hogan.compile($('#tmpl_partial_items').html()).render(data));
+            $('ul:last').after(Hogan.compile($('#partial_items').html()).render(data));
         });
     });
 </script>
