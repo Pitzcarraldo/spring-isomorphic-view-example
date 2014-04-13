@@ -11,8 +11,10 @@ Must Set VMOption -Dfile.encoding=UTF-8.
 * [Mustache-Spring-View](https://github.com/Pitzcarraldo/mustache-spring-view)
 * [Hogan.js](https://github.com/twitter/hogan.js)
 
+And trimou branch is based on another Mustache java implementation [Trimou](http://trimou.org/).
 
-And also you can compare with Handlerbars and Mustache in Spring MVC through handlebar branch.
+
+Also you can compare with Handlerbars and Mustache in Spring MVC through handlebar branch.
 
 * [Handlebars.js](http://handlebarsjs.com/)
 * [Handlebars.java](https://github.com/jknack/handlebars.java)
