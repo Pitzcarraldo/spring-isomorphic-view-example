@@ -16,8 +16,8 @@
 
     <repositories>
         <repository>
-            <id>Sonatype Snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <id>github.pitzcarraldo</id>
+            <url>https://github.com/Pitzcarraldo/maven/raw/master/snapshots</url>
         </repository>
     </repositories>
 
