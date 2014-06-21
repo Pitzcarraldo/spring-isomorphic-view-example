@@ -28,12 +28,13 @@
         </property>
         <property name="viewResolvers">
             <list>
-                <bean id="viewResolver" class="org.springframework.web.servlet.view.trimou.TrimouViewResolver">
-                    <property name="cache" value="false"/>
+                <bean id="viewResolver" class="org.trimou.spring.web.view.TrimouViewResolver">
+                    <property name="cache" value="true"/>
+                    <property name="cacheExpiration" value="120"/>
                     <property name="contentType" value="text/html;charset=UTF-8"/>
                     <property name="prefix" value="/WEB-INF/view/"/>
                     <property name="suffix" value="html"/>
-                    <property name="debug" value="true"/>
+                    <property name="debug" value="false"/>
                     <property name="fileEncoding" value="UTF-8" />
                     <property name="preCompile" value="true" />
                     <property name="helpers">

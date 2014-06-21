@@ -11,20 +11,20 @@
         <spring.version>3.2.0.RELEASE</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
-        <version.trimou>1.5.3-SNAPSHOT</version.trimou>
+        <version.trimou>1.6.0-SNAPSHOT</version.trimou>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>github.pitzcarraldo</id>
-            <url>https://github.com/Pitzcarraldo/maven/raw/master/snapshots</url>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>github.pitzcarraldo</id>-->
+            <!--<url>https://github.com/Pitzcarraldo/maven/raw/master/snapshots</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
 
     <dependencies>
         <dependency>
             <groupId>org.trimou</groupId>
-            <artifactId>trimou-extension-spring</artifactId>
+            <artifactId>trimou-extension-spring-mvc</artifactId>
             <version>${version.trimou}</version>
         </dependency>
 
