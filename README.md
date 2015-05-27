@@ -1,9 +1,13 @@
-spring-mustache-hogan-example
+spring-isomorphic-view-example
 =============================
 
-Spring MVC + Mustache + Hogan.js Integration Example Project.
+Spring MVC Isomorphic View Example Project.
 
 Sharing view template between BackEnd & FrontEnd.
+
+Provide 3 example based on Mustache(Hogan.js, Trimou), Handlebars.
+
+Default example is using Hogan.js.
 
 Must Set VMOption -Dfile.encoding=UTF-8.
 
@@ -12,7 +16,6 @@ Must Set VMOption -Dfile.encoding=UTF-8.
 * [Hogan.js](https://github.com/twitter/hogan.js)
 
 And trimou branch is based on another Mustache java implementation [Trimou](http://trimou.org/).
-
 
 Also you can compare with Handlerbars and Mustache in Spring MVC through handlebar branch.
 
