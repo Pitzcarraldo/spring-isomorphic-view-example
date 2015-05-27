@@ -1,4 +1,4 @@
-package com.spring.mustache.model;
+package com.spring.react.model;
 
 public class Item {
     private String id;
